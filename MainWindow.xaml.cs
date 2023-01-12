@@ -1,6 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
+using OsuParsers.Decoders;
+using OsuParsers.Replays;
+
 namespace RyuEdit
 {
     /// <summary>
