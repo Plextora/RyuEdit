@@ -158,6 +158,17 @@
             Margin="500,0,59,0"
             VerticalAlignment="Top"
             Click="MinimizeButton_Click"/>
+        <Button
+            x:Name="OpenReplayButton"
+            Content="Open Replay"
+            Foreground="PeachPuff"
+            FontFamily="Segoe UI Semilight"
+            FontSize="17px"
+            Template="{StaticResource DefaultButton}"
+            Height="38"
+            Margin="248,69,248,0"
+            VerticalAlignment="Top"
+            Click="OpenReplayButton_Click"/>
 
     </Grid>
 </Window>
