@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
 using OsuParsers.Decoders;
 using OsuParsers.Replays;
+using RyuEdit.Util;
 
 namespace RyuEdit
 {
@@ -27,8 +29,10 @@ namespace RyuEdit
 
         #endregion
 
-        private void OpenReplayButton_Click(object sender, RoutedEventArgs e)
+        private async void OpenReplayButton_Click(object sender, RoutedEventArgs e)
         {
+            SetStatusLabel.Pending("Decoding replay file...", StatusLabel);
+            
             OpenFileDialog openFileDialog = new()
             {
                 Filter = "osu! Replay files (*.osr)|*.osr|All files (*.*)|*.*",
@@ -36,8 +40,11 @@ namespace RyuEdit
                     $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\osu!\Replays"
             };
 
-            if (openFileDialog.ShowDialog() == true)
-                _osuReplay = ReplayDecoder.Decode(openFileDialog.FileName);
+            if (openFileDialog.ShowDialog() != true) return;
+            _osuReplay = ReplayDecoder.Decode(openFileDialog.FileName);
+            SetStatusLabel.Completed("Finished decoding replay...", StatusLabel);
+            await Task.Delay(2000);
+            SetStatusLabel.Default("Idle", StatusLabel);
         }
     }
 }

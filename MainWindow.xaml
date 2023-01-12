@@ -135,6 +135,15 @@
                 Margin="10,10,0,0"
                 VerticalAlignment="Top"
                 FontSize="25"/>
+            <Label
+                x:Name="StatusLabel"
+                Content="Status: Idle"
+                Foreground="PeachPuff"
+                FontFamily="Segoe UI Light"
+                HorizontalAlignment="Left"
+                Margin="10,380,0,0"
+                VerticalAlignment="Top"
+                FontSize="15"/>
         </Grid>
         <Button
             x:Name="CloseButton"
