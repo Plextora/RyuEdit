@@ -22,4 +22,10 @@ public abstract class SetStatusLabel
         statusLabel.Foreground = Brushes.LightGreen;
         statusLabel.Content = $"Status: {statusText}";
     }
+    
+    public static void Error(string statusText, Label statusLabel)
+    {
+        statusLabel.Foreground = Brushes.Crimson;
+        statusLabel.Content = $"Status: {statusText}";
+    }
 }
