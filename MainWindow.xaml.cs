@@ -51,6 +51,7 @@ namespace RyuEdit
         private async void LoadReplayInfo()
         {
             ReplayUsernameTextbox.Text = _osuReplay?.PlayerName;
+            ComboTextbox.Text = (_osuReplay?.Combo).ToString();
             SetStatusLabel.Completed("Loaded replay info!", StatusLabel);
             await Task.Delay(2000);
             SetStatusLabel.Default(StatusLabel);
@@ -58,6 +59,12 @@ namespace RyuEdit
 
         private async void SaveReplayButton_Click(object sender, RoutedEventArgs e)
         {
+            if (ComboTextbox.Text.Contains(','))
+            {
+                SetStatusLabel.Error("The combo textbox cannot have commas! ", StatusLabel);
+                return;
+            }
+
             SetStatusLabel.Pending("Saving editing replay...", StatusLabel);
             SaveFileDialog saveFileDialog = new()
             {
@@ -71,6 +78,15 @@ namespace RyuEdit
             if (_osuReplay == null) return;
 
             _osuReplay.PlayerName = ReplayUsernameTextbox.Text;
+            try
+            {
+                _osuReplay.Combo = Convert.ToUInt16(ComboTextbox.Text);
+            }
+            catch (OverflowException)
+            {
+                SetStatusLabel.Error("Combo number must be higher than 0 but lower than 65,535!", StatusLabel);
+                return;
+            }
             _osuReplay.Save(saveFileDialog.FileName);
             SetStatusLabel.Completed("Saved edited replay!", StatusLabel);
             await Task.Delay(2000);

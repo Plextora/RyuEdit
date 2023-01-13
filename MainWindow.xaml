@@ -187,6 +187,24 @@
                 Margin="310,67,186,0"
                 VerticalAlignment="Top"
                 Click="SaveReplayButton_Click"/>
+            <TextBox
+                x:Name="ComboTextbox"
+                HorizontalAlignment="Left"
+                Margin="155,147,0,0"
+                TextWrapping="NoWrap"
+                Text="0"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="140"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" />
+            <Label
+                Content="Combo"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="155,116,0,0"
+                VerticalAlignment="Top" />
         </Grid>
         <Button
             x:Name="CloseButton"
