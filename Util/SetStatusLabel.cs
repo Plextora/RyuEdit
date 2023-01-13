@@ -5,10 +5,10 @@ namespace RyuEdit.Util;
 
 public abstract class SetStatusLabel
 {
-    public static void Default(string statusText, Label statusLabel)
+    public static void Default(Label statusLabel)
     {
         statusLabel.Foreground = Brushes.PeachPuff;
-        statusLabel.Content = $"Status: {statusText}";
+        statusLabel.Content = "Status: Idle";
     }
     
     public static void Pending(string statusText, Label statusLabel)

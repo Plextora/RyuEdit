@@ -32,7 +32,7 @@ namespace RyuEdit
         private async void OpenReplayButton_Click(object sender, RoutedEventArgs e)
         {
             SetStatusLabel.Pending("Decoding replay file...", StatusLabel);
-            
+
             OpenFileDialog openFileDialog = new()
             {
                 Filter = "osu! Replay files (*.osr)|*.osr|All files (*.*)|*.*",
@@ -42,9 +42,39 @@ namespace RyuEdit
 
             if (openFileDialog.ShowDialog() != true) return;
             _osuReplay = ReplayDecoder.Decode(openFileDialog.FileName);
-            SetStatusLabel.Completed("Finished decoding replay...", StatusLabel);
+            SetStatusLabel.Completed("Finished decoding replay!", StatusLabel);
             await Task.Delay(2000);
-            SetStatusLabel.Default("Idle", StatusLabel);
+            SetStatusLabel.Pending("Loading replay info...", StatusLabel);
+            LoadReplayInfo();
+        }
+
+        private async void LoadReplayInfo()
+        {
+            ReplayUsernameTextbox.Text = _osuReplay?.PlayerName;
+            SetStatusLabel.Completed("Loaded replay info!", StatusLabel);
+            await Task.Delay(2000);
+            SetStatusLabel.Default(StatusLabel);
+        }
+
+        private async void SaveReplayButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetStatusLabel.Pending("Saving editing replay...", StatusLabel);
+            SaveFileDialog saveFileDialog = new()
+            {
+                Filter = "osu! Replay files (*.osr)|*.osr|All files (*.*)|*.*",
+                Title = "Save replay file",
+                InitialDirectory =
+                    $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\osu!\Replays"
+            };
+
+            if (saveFileDialog.ShowDialog() != true) return;
+            if (_osuReplay == null) return;
+
+            _osuReplay.PlayerName = ReplayUsernameTextbox.Text;
+            _osuReplay.Save(saveFileDialog.FileName);
+            SetStatusLabel.Completed("Saved edited replay!", StatusLabel);
+            await Task.Delay(2000);
+            SetStatusLabel.Default(StatusLabel);
         }
     }
 }

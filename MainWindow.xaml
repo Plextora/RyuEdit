@@ -15,9 +15,10 @@
 
                 <Grid>
                     <Grid.Background>
-                        <SolidColorBrush x:Name="ButtonBackground" Color="#202020"/>
+                        <SolidColorBrush x:Name="ButtonBackground" Color="#202020" />
                     </Grid.Background>
-                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="4,5,4,4"/>
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="4,5,4,4" />
                 </Grid>
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
@@ -49,9 +50,10 @@
 
                 <Grid>
                     <Grid.Background>
-                        <SolidColorBrush x:Name="ButtonBackground" Color="#191919"/>
+                        <SolidColorBrush x:Name="ButtonBackground" Color="#191919" />
                     </Grid.Background>
-                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="4,5,4,4"/>
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="4,5,4,4" />
                 </Grid>
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
@@ -83,9 +85,10 @@
 
                 <Grid>
                     <Grid.Background>
-                        <SolidColorBrush x:Name="ButtonBackground" Color="#191919"/>
+                        <SolidColorBrush x:Name="ButtonBackground" Color="#191919" />
                     </Grid.Background>
-                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="4,5,4,4"/>
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="4,5,4,4" />
                 </Grid>
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
@@ -125,7 +128,7 @@
                 Stroke="PeachPuff"
                 StrokeThickness="0.5"
                 VerticalAlignment="Top"
-                MouseLeftButtonDown="WindowToolbar_MouseLeftButtonDown"/>
+                MouseLeftButtonDown="WindowToolbar_MouseLeftButtonDown" />
             <Label
                 x:Name="TitleLabel"
                 Content="Ryu Edit"
@@ -134,7 +137,7 @@
                 HorizontalAlignment="Left"
                 Margin="10,10,0,0"
                 VerticalAlignment="Top"
-                FontSize="25"/>
+                FontSize="25" />
             <Label
                 x:Name="StatusLabel"
                 Content="Status: Idle"
@@ -143,17 +146,17 @@
                 HorizontalAlignment="Left"
                 Margin="10,380,0,0"
                 VerticalAlignment="Top"
-                FontSize="15"/>
+                FontSize="15" />
             <Label
                 Content="Replay username"
                 Foreground="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="7,88,0,0"
-                VerticalAlignment="Top"/>
+                Margin="7,116,0,0"
+                VerticalAlignment="Top" />
             <TextBox
                 x:Name="ReplayUsernameTextbox"
                 HorizontalAlignment="Left"
-                Margin="10,119,0,0"
+                Margin="10,147,0,0"
                 TextWrapping="NoWrap"
                 Text="Pippi_osu"
                 Cursor="IBeam"
@@ -161,7 +164,29 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff"/>
+                BorderBrush="PeachPuff" />
+            <Button
+                x:Name="OpenReplayButton"
+                Content="Open Replay"
+                Foreground="PeachPuff"
+                FontFamily="Segoe UI Semilight"
+                FontSize="17px"
+                Template="{StaticResource DefaultButton}"
+                Height="38"
+                Margin="181,67,315,0"
+                VerticalAlignment="Top"
+                Click="OpenReplayButton_Click" />
+            <Button
+                x:Name="SaveReplayButton"
+                Content="Save Replay"
+                Foreground="PeachPuff"
+                FontFamily="Segoe UI Semilight"
+                FontSize="17px"
+                Template="{StaticResource DefaultButton}"
+                Height="38"
+                Margin="310,67,186,0"
+                VerticalAlignment="Top"
+                Click="SaveReplayButton_Click"/>
         </Grid>
         <Button
             x:Name="CloseButton"
@@ -173,7 +198,7 @@
             Width="61"
             Margin="559,0,0,0"
             VerticalAlignment="Top"
-            Click="CloseButton_Click"/>
+            Click="CloseButton_Click" />
         <Button
             x:Name="MinimizeButton"
             Content="&#xE738;"
@@ -184,18 +209,6 @@
             Width="61"
             Margin="500,0,59,0"
             VerticalAlignment="Top"
-            Click="MinimizeButton_Click"/>
-        <Button
-            x:Name="OpenReplayButton"
-            Content="Open Replay"
-            Foreground="PeachPuff"
-            FontFamily="Segoe UI Semilight"
-            FontSize="17px"
-            Template="{StaticResource DefaultButton}"
-            Height="38"
-            Margin="248,69,248,0"
-            VerticalAlignment="Top"
-            Click="OpenReplayButton_Click"/>
-
+            Click="MinimizeButton_Click" />
     </Grid>
 </Window>
