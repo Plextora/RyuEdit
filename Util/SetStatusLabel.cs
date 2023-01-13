@@ -1,31 +1,38 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace RyuEdit.Util;
 
 public abstract class SetStatusLabel
 {
-    public static void Default(Label statusLabel)
+    private static readonly MainWindow? Form = Application.Current.Windows[0] as MainWindow;
+    private static readonly Label? StatusLabel = Form?.StatusLabel;
+    public static void Default()
     {
-        statusLabel.Foreground = Brushes.PeachPuff;
-        statusLabel.Content = "Status: Idle";
+        if (StatusLabel == null) return;
+        StatusLabel.Foreground = Brushes.PeachPuff;
+        StatusLabel.Content = "Status: Idle";
     }
     
-    public static void Pending(string statusText, Label statusLabel)
+    public static void Pending(string statusText)
     {
-        statusLabel.Foreground = Brushes.Khaki;
-        statusLabel.Content = $"Status: {statusText}";
+        if (StatusLabel == null) return;
+        StatusLabel.Foreground = Brushes.Khaki;
+        StatusLabel.Content = $"Status: {statusText}";
     }
 
-    public static void Completed(string statusText, Label statusLabel)
+    public static void Completed(string statusText)
     {
-        statusLabel.Foreground = Brushes.LightGreen;
-        statusLabel.Content = $"Status: {statusText}";
+        if (StatusLabel == null) return;
+        StatusLabel.Foreground = Brushes.LightGreen;
+        StatusLabel.Content = $"Status: {statusText}";
     }
     
-    public static void Error(string statusText, Label statusLabel)
+    public static void Error(string statusText)
     {
-        statusLabel.Foreground = Brushes.Crimson;
-        statusLabel.Content = $"Status: {statusText}";
+        if (StatusLabel == null) return;
+        StatusLabel.Foreground = Brushes.Crimson;
+        StatusLabel.Content = $"Status: {statusText}";
     }
 }

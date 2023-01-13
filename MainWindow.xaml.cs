@@ -12,7 +12,7 @@ namespace RyuEdit
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private Replay? _osuReplay;
 
@@ -31,7 +31,7 @@ namespace RyuEdit
 
         private async void OpenReplayButton_Click(object sender, RoutedEventArgs e)
         {
-            SetStatusLabel.Pending("Decoding replay file...", StatusLabel);
+            SetStatusLabel.Pending("Decoding replay file...");
 
             OpenFileDialog openFileDialog = new()
             {
@@ -42,9 +42,9 @@ namespace RyuEdit
 
             if (openFileDialog.ShowDialog() != true) return;
             _osuReplay = ReplayDecoder.Decode(openFileDialog.FileName);
-            SetStatusLabel.Completed("Finished decoding replay!", StatusLabel);
+            SetStatusLabel.Completed("Finished decoding replay!");
             await Task.Delay(2000);
-            SetStatusLabel.Pending("Loading replay info...", StatusLabel);
+            SetStatusLabel.Pending("Loading replay info...");
             LoadReplayInfo();
         }
 
@@ -52,20 +52,20 @@ namespace RyuEdit
         {
             ReplayUsernameTextbox.Text = _osuReplay?.PlayerName;
             ComboTextbox.Text = (_osuReplay?.Combo).ToString();
-            SetStatusLabel.Completed("Loaded replay info!", StatusLabel);
+            SetStatusLabel.Completed("Loaded replay info!");
             await Task.Delay(2000);
-            SetStatusLabel.Default(StatusLabel);
+            SetStatusLabel.Default();
         }
 
         private async void SaveReplayButton_Click(object sender, RoutedEventArgs e)
         {
             if (ComboTextbox.Text.Contains(','))
             {
-                SetStatusLabel.Error("The combo textbox cannot have commas! ", StatusLabel);
+                SetStatusLabel.Error("The combo textbox cannot have commas!");
                 return;
             }
 
-            SetStatusLabel.Pending("Saving editing replay...", StatusLabel);
+            SetStatusLabel.Pending("Saving editing replay...");
             SaveFileDialog saveFileDialog = new()
             {
                 Filter = "osu! Replay files (*.osr)|*.osr|All files (*.*)|*.*",
@@ -84,13 +84,13 @@ namespace RyuEdit
             }
             catch (OverflowException)
             {
-                SetStatusLabel.Error("Combo number must be higher than 0 but lower than 65,535!", StatusLabel);
+                SetStatusLabel.Error("Combo number must be higher than 0 but lower than 65,535!");
                 return;
             }
             _osuReplay.Save(saveFileDialog.FileName);
-            SetStatusLabel.Completed("Saved edited replay!", StatusLabel);
+            SetStatusLabel.Completed("Saved edited replay!");
             await Task.Delay(2000);
-            SetStatusLabel.Default(StatusLabel);
+            SetStatusLabel.Default();
         }
     }
 }

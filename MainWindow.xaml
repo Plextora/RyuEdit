@@ -140,6 +140,7 @@
                 FontSize="25" />
             <Label
                 x:Name="StatusLabel"
+                x:FieldModifier="public"
                 Content="Status: Idle"
                 Foreground="PeachPuff"
                 FontFamily="Segoe UI Light"
@@ -155,6 +156,7 @@
                 VerticalAlignment="Top" />
             <TextBox
                 x:Name="ReplayUsernameTextbox"
+                x:FieldModifier="public"
                 HorizontalAlignment="Left"
                 Margin="10,147,0,0"
                 TextWrapping="NoWrap"
@@ -189,6 +191,7 @@
                 Click="SaveReplayButton_Click"/>
             <TextBox
                 x:Name="ComboTextbox"
+                x:FieldModifier="public"
                 HorizontalAlignment="Left"
                 Margin="155,147,0,0"
                 TextWrapping="NoWrap"
