@@ -157,6 +157,7 @@
             <TextBox
                 x:Name="ReplayUsernameTextbox"
                 x:FieldModifier="public"
+                CaretBrush="PeachPuff"
                 HorizontalAlignment="Left"
                 Margin="10,147,0,0"
                 TextWrapping="NoWrap"
@@ -192,6 +193,7 @@
             <TextBox
                 x:Name="ComboTextbox"
                 x:FieldModifier="public"
+                CaretBrush="PeachPuff"
                 HorizontalAlignment="Left"
                 Margin="155,147,0,0"
                 TextWrapping="NoWrap"
