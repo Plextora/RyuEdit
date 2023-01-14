@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -23,6 +24,12 @@ public static class CheckFields
 
     public static bool CheckCombo()
     {
+        if (ComboTextbox != null && ComboTextbox.Text.Any(char.IsLetter))
+        {
+            SetStatusLabel.Error("The combo textbox cannot contain letters");
+            return false;
+        }
+
         if (ComboTextbox != null && ComboTextbox.Text.Contains(','))
         {
             SetStatusLabel.Error("The combo textbox cannot have commas!");
@@ -44,6 +51,13 @@ public static class CheckFields
 
     public static bool CheckJudgements()
     {
+        foreach (var i in JudgementTextBoxes)
+        {
+            if (!(bool)i.Key?.Text.Any(char.IsLetter)) continue;
+            SetStatusLabel.Error($"The {i.Value} textbox cannot contain letters");
+            return false;
+        }
+        
         foreach (var i in JudgementTextBoxes)
         {
             if (i.Key == null || !i.Key.Text.Contains(',')) continue;
