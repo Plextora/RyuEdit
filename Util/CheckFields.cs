@@ -53,20 +53,18 @@ public static class CheckFields
     {
         foreach (var i in JudgementTextBoxes)
         {
-            if (!(bool)i.Key?.Text.Any(char.IsLetter)) continue;
-            SetStatusLabel.Error($"The {i.Value} textbox cannot contain letters");
-            return false;
-        }
-        
-        foreach (var i in JudgementTextBoxes)
-        {
-            if (i.Key == null || !i.Key.Text.Contains(',')) continue;
-            SetStatusLabel.Error($"The {i.Value} textbox cannot contain commas!");
-            return false;
-        }
+            if (i.Key != null && i.Key.Text.Any(char.IsLetter))
+            {
+                SetStatusLabel.Error($"The {i.Value} textbox cannot contain letters!");
+                return false;
+            }
 
-        foreach (var i in JudgementTextBoxes)
-        {
+            if (i.Key != null && i.Key.Text.Contains(','))
+            {
+                SetStatusLabel.Error($"The {i.Value} textbox cannot contain commas!");
+                return false;
+            }
+
             try
             {
                 Convert.ToUInt16(i.Key?.Text);
