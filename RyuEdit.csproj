@@ -10,6 +10,7 @@
         <NeutralLanguage>en</NeutralLanguage>
         <Company>Plextora</Company>
         <Product>Ryu Edit</Product>
+        <Description>An app made in C# for modifying the metadata of osu! replays </Description>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

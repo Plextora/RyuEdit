@@ -267,14 +267,14 @@
                 Content="Replay username"
                 Foreground="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="7,116,0,0"
+                Margin="166,102,0,0"
                 VerticalAlignment="Top" />
             <TextBox
                 x:Name="ReplayUsernameTextbox"
                 x:FieldModifier="public"
                 CaretBrush="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="10,147,0,0"
+                Margin="169,132,0,0"
                 TextWrapping="NoWrap"
                 Text="Pippi_osu"
                 Cursor="IBeam"
@@ -310,7 +310,7 @@
                 x:FieldModifier="public"
                 CaretBrush="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="155,147,0,0"
+                Margin="314,132,0,0"
                 TextWrapping="NoWrap"
                 Text="0"
                 Cursor="IBeam"
@@ -323,10 +323,10 @@
                 Content="Combo"
                 Foreground="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="155,116,0,0"
+                Margin="314,102,0,0"
                 VerticalAlignment="Top" />
             <CheckBox
-                Grid.Row="0"
+                Grid.Row="1"
                 x:Name="IsPerfectComboCheckbox"
                 x:FieldModifier="public"
                 Style="{StaticResource CheckBox}"
@@ -334,9 +334,129 @@
                 Foreground="PeachPuff"
                 Background="#202020"
                 HorizontalAlignment="Left"
-                Margin="300,148,0,0"
+                Margin="210,13,0,0"
                 VerticalAlignment="Top"
                 IsChecked="False"/>
+            <Label
+                Content="Number of 300s"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="19,170,0,0"
+                VerticalAlignment="Top" />
+            <TextBox
+                x:Name="_300CountTextBox"
+                x:FieldModifier="public"
+                CaretBrush="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="22,201,0,0"
+                TextWrapping="NoWrap"
+                Text="0"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="140"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" />
+            <Label
+                Content="Number of 100s"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="166,170,0,0"
+                VerticalAlignment="Top" />
+            <TextBox
+                x:Name="_100CountTextBox"
+                x:FieldModifier="public"
+                CaretBrush="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="169,201,0,0"
+                TextWrapping="NoWrap"
+                Text="0"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="140"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" />
+            <Label
+                Content="Number of 50s"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="311,170,0,0"
+                VerticalAlignment="Top" />
+            <TextBox
+                x:Name="_50CountTextBox"
+                x:FieldModifier="public"
+                CaretBrush="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="314,201,0,0"
+                TextWrapping="NoWrap"
+                Text="0"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="140"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" />
+            <Label
+                Content="Number of misses"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="456,170,0,0"
+                VerticalAlignment="Top" />
+            <TextBox
+                x:Name="MissCountTextBox"
+                x:FieldModifier="public"
+                CaretBrush="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="459,201,0,0"
+                TextWrapping="NoWrap"
+                Text="0"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="140"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" />
+            <Label
+                Content="Number of Geki's"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="166,224,0,0"
+                VerticalAlignment="Top" />
+            <TextBox
+                x:Name="GekiCountTextBox"
+                x:FieldModifier="public"
+                CaretBrush="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="169,255,0,0"
+                TextWrapping="NoWrap"
+                Text="0"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="140"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" Grid.RowSpan="2" />
+            <Label
+                Content="Number of Katu's"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="311,224,0,0"
+                VerticalAlignment="Top" />
+            <TextBox
+                x:Name="KatuCountTextBox"
+                x:FieldModifier="public"
+                CaretBrush="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="314,255,0,0"
+                TextWrapping="NoWrap"
+                Text="0"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="140"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" Grid.RowSpan="2" />
         </Grid>
         <Button
             x:Name="CloseButton"
