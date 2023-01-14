@@ -52,6 +52,8 @@ namespace RyuEdit
         {
             ReplayUsernameTextbox.Text = _osuReplay?.PlayerName;
             ComboTextbox.Text = (_osuReplay?.Combo).ToString();
+            IsPerfectComboCheckbox.IsChecked = _osuReplay is { PerfectCombo: true };
+
             SetStatusLabel.Completed("Loaded replay info!");
             await Task.Delay(2000);
             SetStatusLabel.Default();
@@ -75,7 +77,9 @@ namespace RyuEdit
 
             _osuReplay.PlayerName = ReplayUsernameTextbox.Text;
             _osuReplay.Combo = Convert.ToUInt16(ComboTextbox.Text);
-            
+            if (IsPerfectComboCheckbox.IsChecked != null)
+                _osuReplay.PerfectCombo = (bool)IsPerfectComboCheckbox.IsChecked;
+
             _osuReplay.Save(saveFileDialog.FileName);
             SetStatusLabel.Completed("Saved edited replay!");
             await Task.Delay(2000);

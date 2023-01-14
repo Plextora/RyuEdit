@@ -5,10 +5,15 @@
         <TargetFramework>net7.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <FileVersion>1.0.0.0</FileVersion>
+        <AssemblyVersion>1.4.1.1</AssemblyVersion>
+        <FileVersion>1.4.1.1</FileVersion>
         <NeutralLanguage>en</NeutralLanguage>
         <Company>Plextora</Company>
+        <Product>Ryu Edit</Product>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <Optimize>False</Optimize>
     </PropertyGroup>
 
     <ItemGroup>
