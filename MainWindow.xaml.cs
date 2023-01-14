@@ -59,11 +59,8 @@ namespace RyuEdit
 
         private async void SaveReplayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ComboTextbox.Text.Contains(','))
-            {
-                SetStatusLabel.Error("The combo textbox cannot have commas!");
-                return;
-            }
+            if (_osuReplay == null) return;
+            if (!CheckFields.CheckCombo()) return;
 
             SetStatusLabel.Pending("Saving editing replay...");
             SaveFileDialog saveFileDialog = new()
@@ -75,18 +72,10 @@ namespace RyuEdit
             };
 
             if (saveFileDialog.ShowDialog() != true) return;
-            if (_osuReplay == null) return;
 
             _osuReplay.PlayerName = ReplayUsernameTextbox.Text;
-            try
-            {
-                _osuReplay.Combo = Convert.ToUInt16(ComboTextbox.Text);
-            }
-            catch (OverflowException)
-            {
-                SetStatusLabel.Error("Combo number must be higher than 0 but lower than 65,535!");
-                return;
-            }
+            _osuReplay.Combo = Convert.ToUInt16(ComboTextbox.Text);
+            
             _osuReplay.Save(saveFileDialog.FileName);
             SetStatusLabel.Completed("Saved edited replay!");
             await Task.Delay(2000);
