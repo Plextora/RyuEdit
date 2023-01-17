@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -52,6 +53,7 @@ namespace RyuEdit
         {
             ReplayUsernameTextbox.Text = _osuReplay?.PlayerName;
             ComboTextbox.Text = (_osuReplay?.Combo).ToString();
+            ReplayTimestampTextBox.Text = _osuReplay?.ReplayTimestamp.ToLocalTime().ToString(CultureInfo.CurrentCulture);
             IsPerfectComboCheckbox.IsChecked = _osuReplay is { PerfectCombo: true };
             _300CountTextBox.Text = _osuReplay?.Count300.ToString();
             _100CountTextBox.Text = _osuReplay?.Count100.ToString();
@@ -70,6 +72,7 @@ namespace RyuEdit
             if (_osuReplay == null) return;
             if (!CheckFields.CheckCombo()) return;
             if (!CheckFields.CheckJudgements()) return;
+            if (!CheckFields.CheckTimestamp()) return;
 
             SetStatusLabel.Pending("Saving editing replay...");
             SaveFileDialog saveFileDialog = new()
@@ -92,7 +95,8 @@ namespace RyuEdit
             _osuReplay.CountMiss = Convert.ToUInt16(MissCountTextBox.Text);
             _osuReplay.CountGeki = Convert.ToUInt16(GekiCountTextBox.Text);
             _osuReplay.CountKatu = Convert.ToUInt16(KatuCountTextBox.Text);
-            
+            _osuReplay.ReplayTimestamp = Convert.ToDateTime(ReplayTimestampTextBox.Text);
+
             _osuReplay.Save(saveFileDialog.FileName);
             SetStatusLabel.Completed("Saved edited replay!");
             await Task.Delay(2000);

@@ -11,6 +11,7 @@ public static class CheckFields
     private static readonly MainWindow? Form = Application.Current.Windows[0] as MainWindow;
 
     private static readonly TextBox? ComboTextbox = Form?.ComboTextbox;
+    private static readonly TextBox? ReplayTimestampTextBox = Form?.ReplayTimestampTextBox;
     private static readonly IDictionary<TextBox?, string> JudgementTextBoxes = new Dictionary<TextBox, string>
     {
         { Form?._300CountTextBox!, "number of 300s" },
@@ -74,6 +75,21 @@ public static class CheckFields
                 SetStatusLabel.Error($"The {i.Value} must be higher than 0 but lower than 65,535!");
                 return false;
             }
+        }
+
+        return true;
+    }
+
+    public static bool CheckTimestamp()
+    {
+        try
+        {
+            Convert.ToDateTime(ReplayTimestampTextBox?.Text);
+        }
+        catch
+        {
+            SetStatusLabel.Error("Invalid replay timestamp format!");
+            return false;
         }
 
         return true;

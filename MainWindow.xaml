@@ -146,12 +146,15 @@
                                         </LinearGradientBrush>
                                     </Border.Background>
                                     <Grid>
-                                        <Path Visibility="Collapsed" Width="7" Height="7" x:Name="CheckMark" SnapsToDevicePixels="False" StrokeThickness="2" Data="M 0 0 L 7 7 M 0 7 L 7 0">
+                                        <Path Visibility="Collapsed" Width="7" Height="7" x:Name="CheckMark"
+                                              SnapsToDevicePixels="False" StrokeThickness="2"
+                                              Data="M 0 0 L 7 7 M 0 7 L 7 0">
                                             <Path.Stroke>
                                                 <SolidColorBrush Color="PeachPuff" />
                                             </Path.Stroke>
                                         </Path>
-                                        <Path Visibility="Collapsed" Width="7" Height="7" x:Name="InderminateMark" SnapsToDevicePixels="False" StrokeThickness="2" Data="M 0 7 L 7 0">
+                                        <Path Visibility="Collapsed" Width="7" Height="7" x:Name="InderminateMark"
+                                              SnapsToDevicePixels="False" StrokeThickness="2" Data="M 0 7 L 7 0">
                                             <Path.Stroke>
                                                 <SolidColorBrush Color="PeachPuff" />
                                             </Path.Stroke>
@@ -164,32 +167,40 @@
                                     <VisualState x:Name="Normal" />
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#454545" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#454545" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#303030" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#303030" />
                                             </ColorAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Pressed">
                                         <Storyboard>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#454545" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#454545" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#303030" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
                                                 <EasingColorKeyFrame KeyTime="0" Value="#303030" />
                                             </ColorAnimationUsingKeyFrames>
                                         </Storyboard>
@@ -199,28 +210,34 @@
                                 <VisualStateGroup x:Name="CheckStates">
                                     <VisualState x:Name="Checked">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CheckMark">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                            <ObjectAnimationUsingKeyFrames
+                                                Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                Storyboard.TargetName="CheckMark">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{x:Static Visibility.Visible}" />
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
                                     <VisualState x:Name="Unchecked" />
                                     <VisualState x:Name="Indeterminate">
                                         <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="InderminateMark">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                            <ObjectAnimationUsingKeyFrames
+                                                Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                Storyboard.TargetName="InderminateMark">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{x:Static Visibility.Visible}" />
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <ContentPresenter Margin="4,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" RecognizesAccessKey="True" />
+                            <ContentPresenter Margin="4,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                              RecognizesAccessKey="True" />
                         </BulletDecorator>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-
 
 
     </Window.Resources>
@@ -230,8 +247,8 @@
         <Grid
             Panel.ZIndex="-1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="53*"/>
-                <RowDefinition Height="31*"/>
+                <RowDefinition Height="53*" />
+                <RowDefinition Height="31*" />
             </Grid.RowDefinitions>
             <Rectangle
                 x:Name="WindowToolbar"
@@ -267,14 +284,14 @@
                 Content="Replay username"
                 Foreground="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="166,102,0,0"
+                Margin="80,105,0,0"
                 VerticalAlignment="Top" />
             <TextBox
                 x:Name="ReplayUsernameTextbox"
                 x:FieldModifier="public"
                 CaretBrush="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="169,132,0,0"
+                Margin="83,135,0,0"
                 TextWrapping="NoWrap"
                 Text="Pippi_osu"
                 Cursor="IBeam"
@@ -304,13 +321,13 @@
                 Height="38"
                 Margin="310,67,186,0"
                 VerticalAlignment="Top"
-                Click="SaveReplayButton_Click"/>
+                Click="SaveReplayButton_Click" />
             <TextBox
                 x:Name="ComboTextbox"
                 x:FieldModifier="public"
                 CaretBrush="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="314,132,0,0"
+                Margin="228,135,0,0"
                 TextWrapping="NoWrap"
                 Text="0"
                 Cursor="IBeam"
@@ -323,7 +340,7 @@
                 Content="Combo"
                 Foreground="PeachPuff"
                 HorizontalAlignment="Left"
-                Margin="314,102,0,0"
+                Margin="228,105,0,0"
                 VerticalAlignment="Top" />
             <CheckBox
                 Grid.Row="1"
@@ -336,7 +353,7 @@
                 HorizontalAlignment="Left"
                 Margin="210,13,0,0"
                 VerticalAlignment="Top"
-                IsChecked="False"/>
+                IsChecked="False" />
             <Label
                 Content="Number of 300s"
                 Foreground="PeachPuff"
@@ -465,7 +482,27 @@
                 Margin="0,115,10,0"
                 VerticalAlignment="Top"
                 FontSize="15"
-                Grid.Row="1"/>
+                Grid.Row="1" />
+            <TextBox
+                x:Name="ReplayTimestampTextBox"
+                x:FieldModifier="public"
+                CaretBrush="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="372,135,0,0"
+                TextWrapping="NoWrap"
+                Text="1/1/1970 12:00 AM"
+                Cursor="IBeam"
+                VerticalAlignment="Top"
+                Width="172"
+                Background="Transparent"
+                Foreground="PeachPuff"
+                BorderBrush="PeachPuff" />
+            <Label
+                Content="Replay timestamp"
+                Foreground="PeachPuff"
+                HorizontalAlignment="Left"
+                Margin="372,105,0,0"
+                VerticalAlignment="Top" />
         </Grid>
         <Button
             x:Name="CloseButton"
