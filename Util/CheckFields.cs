@@ -23,6 +23,12 @@ public static class CheckFields
         // definitely not best practice but whatever, bad practice is my jam!
     }!;
 
+    /*
+     * "Why do you have so many 'CheckX' functions that you don't use?"
+     * I'll probably have a use for these functions later, so they'll be staying in the codebase.
+     * (I will definitely regret this later)
+     */
+    
     public static bool CheckCombo()
     {
         if (ComboTextbox != null && ComboTextbox.Text.Any(char.IsLetter))
