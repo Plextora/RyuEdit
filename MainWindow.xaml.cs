@@ -41,9 +41,14 @@ namespace RyuEdit
                     $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\osu!\Replays"
             };
 
-            if (openFileDialog.ShowDialog() != true) return;
+            if (openFileDialog.ShowDialog() != true)
+            {
+                SetStatusLabel.Default();
+                return;
+            }
+
             _osuReplay = ReplayDecoder.Decode(openFileDialog.FileName);
-            SetStatusLabel.Completed("Finished decoding replay!");
+            SetStatusLabel.Completed("Finished decoding replay! Now loading replay info...");
             await Task.Delay(2000);
             SetStatusLabel.Pending("Loading replay info...");
             LoadReplayInfo();
@@ -53,7 +58,8 @@ namespace RyuEdit
         {
             ReplayUsernameTextbox.Text = _osuReplay?.PlayerName;
             ComboTextbox.Text = (_osuReplay?.Combo).ToString();
-            ReplayTimestampTextBox.Text = _osuReplay?.ReplayTimestamp.ToLocalTime().ToString(CultureInfo.CurrentCulture);
+            ReplayTimestampTextBox.Text =
+                _osuReplay?.ReplayTimestamp.ToLocalTime().ToString(CultureInfo.CurrentCulture);
             IsPerfectComboCheckbox.IsChecked = _osuReplay is { PerfectCombo: true };
             _300CountTextBox.Text = _osuReplay?.Count300.ToString();
             _100CountTextBox.Text = _osuReplay?.Count100.ToString();
@@ -69,12 +75,17 @@ namespace RyuEdit
 
         private async void SaveReplayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (_osuReplay == null) return;
+            if (_osuReplay == null)
+            {
+                SetStatusLabel.Error("You must open a replay before saving it!");
+                return;
+            }
+
             if (!CheckFields.CheckCombo()) return;
             if (!CheckFields.CheckJudgements()) return;
             if (!CheckFields.CheckTimestamp()) return;
 
-            SetStatusLabel.Pending("Saving editing replay...");
+            SetStatusLabel.Pending("Saving replay file...");
             SaveFileDialog saveFileDialog = new()
             {
                 Filter = "osu! Replay files (*.osr)|*.osr|All files (*.*)|*.*",
@@ -83,7 +94,11 @@ namespace RyuEdit
                     $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\osu!\Replays"
             };
 
-            if (saveFileDialog.ShowDialog() != true) return;
+            if (saveFileDialog.ShowDialog() != true)
+            {
+                SetStatusLabel.Default();
+                return;
+            }
 
             _osuReplay.PlayerName = ReplayUsernameTextbox.Text;
             _osuReplay.Combo = Convert.ToUInt16(ComboTextbox.Text);
