@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -15,7 +14,7 @@ namespace RyuEdit
     /// </summary>
     public partial class MainWindow
     {
-        private Replay? _osuReplay;
+        private static Replay? _osuReplay;
 
         public MainWindow()
         {
@@ -51,22 +50,12 @@ namespace RyuEdit
             SetStatusLabel.Completed("Finished decoding replay! Now loading replay info...");
             await Task.Delay(2000);
             SetStatusLabel.Pending("Loading replay info...");
-            LoadReplayInfo();
+            OnReplayLoaded();
         }
 
-        private async void LoadReplayInfo()
+        private static async void OnReplayLoaded()
         {
-            ReplayUsernameTextbox.Text = _osuReplay?.PlayerName;
-            ComboTextbox.Text = (_osuReplay?.Combo).ToString();
-            ReplayTimestampTextBox.Text =
-                _osuReplay?.ReplayTimestamp.ToLocalTime().ToString(CultureInfo.CurrentCulture);
-            IsPerfectComboCheckbox.IsChecked = _osuReplay is { PerfectCombo: true };
-            _300CountTextBox.Text = _osuReplay?.Count300.ToString();
-            _100CountTextBox.Text = _osuReplay?.Count100.ToString();
-            _50CountTextBox.Text = _osuReplay?.Count50.ToString();
-            MissCountTextBox.Text = _osuReplay?.CountMiss.ToString();
-            GekiCountTextBox.Text = _osuReplay?.CountGeki.ToString();
-            KatuCountTextBox.Text = _osuReplay?.CountKatu.ToString();
+            ElementManager.LoadReplayInfo(_osuReplay);
 
             SetStatusLabel.Completed("Loaded replay info!");
             await Task.Delay(2000);

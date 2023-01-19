@@ -299,7 +299,8 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" />
+                BorderBrush="PeachPuff"
+                IsEnabled="False"/>
             <Button
                 x:Name="OpenReplayButton"
                 Content="Open Replay"
@@ -321,7 +322,9 @@
                 Height="38"
                 Margin="310,67,186,0"
                 VerticalAlignment="Top"
-                Click="SaveReplayButton_Click" />
+                Click="SaveReplayButton_Click"
+                IsEnabled="False"
+                Opacity="0.6"/>
             <TextBox
                 x:Name="ComboTextbox"
                 x:FieldModifier="public"
@@ -335,7 +338,8 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" />
+                BorderBrush="PeachPuff"
+                IsEnabled="False"/>
             <Label
                 Content="Combo"
                 Foreground="PeachPuff"
@@ -353,7 +357,9 @@
                 HorizontalAlignment="Left"
                 Margin="210,13,0,0"
                 VerticalAlignment="Top"
-                IsChecked="False" />
+                IsChecked="False"
+                IsEnabled="False"
+                Opacity="0.6"/>
             <Label
                 Content="Number of 300s"
                 Foreground="PeachPuff"
@@ -373,7 +379,8 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" />
+                BorderBrush="PeachPuff"
+                IsEnabled="False"/>
             <Label
                 Content="Number of 100s"
                 Foreground="PeachPuff"
@@ -393,7 +400,8 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" />
+                BorderBrush="PeachPuff"
+                IsEnabled="False"/>
             <Label
                 Content="Number of 50s"
                 Foreground="PeachPuff"
@@ -413,7 +421,8 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" />
+                BorderBrush="PeachPuff"
+                IsEnabled="False"/>
             <Label
                 Content="Number of misses"
                 Foreground="PeachPuff"
@@ -433,7 +442,8 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" />
+                BorderBrush="PeachPuff"
+                IsEnabled="False"/>
             <Label
                 Content="Number of Geki's"
                 Foreground="PeachPuff"
@@ -453,7 +463,9 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" Grid.RowSpan="2" />
+                BorderBrush="PeachPuff"
+                Grid.RowSpan="2"
+                IsEnabled="False"/>
             <Label
                 Content="Number of Katu's"
                 Foreground="PeachPuff"
@@ -473,7 +485,9 @@
                 Width="140"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" Grid.RowSpan="2" />
+                BorderBrush="PeachPuff"
+                Grid.RowSpan="2"
+                IsEnabled="False"/>
             <Label
                 Content="Made by Plextora"
                 Foreground="PeachPuff"
@@ -482,7 +496,8 @@
                 Margin="0,115,10,0"
                 VerticalAlignment="Top"
                 FontSize="15"
-                Grid.Row="1" />
+                Grid.Row="1"
+                IsEnabled="False"/>
             <TextBox
                 x:Name="ReplayTimestampTextBox"
                 x:FieldModifier="public"
@@ -496,7 +511,8 @@
                 Width="172"
                 Background="Transparent"
                 Foreground="PeachPuff"
-                BorderBrush="PeachPuff" />
+                BorderBrush="PeachPuff"
+                IsEnabled="False"/>
             <Label
                 Content="Replay timestamp"
                 Foreground="PeachPuff"

@@ -12,16 +12,6 @@ public static class CheckFields
 
     private static readonly TextBox? ComboTextbox = Form?.ComboTextbox;
     private static readonly TextBox? ReplayTimestampTextBox = Form?.ReplayTimestampTextBox;
-    private static readonly IDictionary<TextBox?, string> JudgementTextBoxes = new Dictionary<TextBox, string>
-    {
-        { Form?._300CountTextBox!, "number of 300s" },
-        { Form?._100CountTextBox!, "number of 100s" },
-        { Form?._50CountTextBox!, "number of 50s" },
-        { Form?.MissCountTextBox!, "number of misses" },
-        { Form?.GekiCountTextBox!, "number of Geki's" },
-        { Form?.KatuCountTextBox!, "number of Katu's" }
-        // definitely not best practice but whatever, bad practice is my jam!
-    }!;
 
     /*
      * "Why do you have so many 'CheckX' functions that you don't use?"
@@ -58,7 +48,7 @@ public static class CheckFields
 
     public static bool CheckJudgements()
     {
-        foreach (var i in JudgementTextBoxes)
+        foreach (var i in ElementManager.JudgementTextBoxes)
         {
             if (i.Key != null && i.Key.Text.Any(char.IsLetter))
             {
