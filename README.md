@@ -11,7 +11,7 @@
 - Edit replay username (without restrictions!)
 - Edit combo
 - Edit if the replay is shown as an FC or not
-- (Coming soon) edit replay timestamps
+- Edit replay timestamps
 
 # How do I download this?
 Head over to the [latest release tag](https://github.com/Plextora/RyuEdit/releases/latest) and download the installer!
