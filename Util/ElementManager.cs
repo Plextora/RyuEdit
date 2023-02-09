@@ -61,11 +61,14 @@ public static class ElementManager
         }
 
         if (Form == null) return;
+        if (replay != null) replay.Mods = 0;
         Form.IsPerfectComboCheckbox.Opacity = 1;
-        Form.DoubleTimeCheckBox.Opacity = 1;
+        Form.DoubleTimeModCheckBox.Opacity = 1;
+        Form.HiddenModCheckBox.Opacity = 1;
         Form.SaveReplayButton.Opacity = 1;
         Form.IsPerfectComboCheckbox.IsEnabled = true;
-        Form.DoubleTimeCheckBox.IsEnabled = true;
+        Form.DoubleTimeModCheckBox.IsEnabled = true;
+        Form.HiddenModCheckBox.IsEnabled = true;
         Form.SaveReplayButton.IsEnabled = true;
         Form.OpenReplayButton.IsEnabled = true;
     }

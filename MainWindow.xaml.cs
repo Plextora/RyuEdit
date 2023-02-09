@@ -96,8 +96,10 @@ namespace RyuEdit
             _osuReplay.ReplayScore = Convert.ToInt32(ScoreTextBox.Text);
             if (IsPerfectComboCheckbox.IsChecked != null)
                 _osuReplay.PerfectCombo = (bool)IsPerfectComboCheckbox.IsChecked;
-            if (DoubleTimeCheckBox.IsChecked == true)
+            if (DoubleTimeModCheckBox.IsChecked == true)
                 _osuReplay.Mods += (int)Mods.DoubleTime;
+            if (HiddenModCheckBox.IsChecked == true)
+                _osuReplay.Mods += (int)Mods.Hidden;
             _osuReplay.Count300 = Convert.ToUInt16(_300CountTextBox.Text);
             _osuReplay.Count100 = Convert.ToUInt16(_100CountTextBox.Text);
             _osuReplay.Count50 = Convert.ToUInt16(_50CountTextBox.Text);
