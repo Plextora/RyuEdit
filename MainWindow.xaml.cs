@@ -73,6 +73,7 @@ namespace RyuEdit
             if (!CheckFields.CheckCombo()) return;
             if (!CheckFields.CheckJudgements()) return;
             if (!CheckFields.CheckTimestamp()) return;
+            if (!CheckFields.CheckScore()) return;
 
             SetStatusLabel.Pending("Saving replay file...");
             SaveFileDialog saveFileDialog = new()
@@ -91,6 +92,7 @@ namespace RyuEdit
 
             _osuReplay.PlayerName = ReplayUsernameTextbox.Text;
             _osuReplay.Combo = Convert.ToUInt16(ComboTextbox.Text);
+            _osuReplay.ReplayScore = Convert.ToInt32(ScoreTextBox.Text);
             if (IsPerfectComboCheckbox.IsChecked != null)
                 _osuReplay.PerfectCombo = (bool)IsPerfectComboCheckbox.IsChecked;
             _osuReplay.Count300 = Convert.ToUInt16(_300CountTextBox.Text);

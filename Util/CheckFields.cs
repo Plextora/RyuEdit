@@ -11,6 +11,7 @@ public static class CheckFields
     private static readonly MainWindow? Form = Application.Current.Windows[0] as MainWindow;
 
     private static readonly TextBox? ComboTextbox = Form?.ComboTextbox;
+    private static readonly TextBox? ScoreTextBox = Form?.ScoreTextBox;
     private static readonly TextBox? ReplayTimestampTextBox = Form?.ReplayTimestampTextBox;
 
     /*
@@ -40,6 +41,33 @@ public static class CheckFields
         catch (OverflowException)
         {
             SetStatusLabel.Error("Combo number must be higher than 0 but lower than 65,535!");
+            return false;
+        }
+
+        return true;
+    }
+    
+    public static bool CheckScore()
+    {
+        if (ScoreTextBox != null && ScoreTextBox.Text.Any(char.IsLetter))
+        {
+            SetStatusLabel.Error("The score textbox cannot contain letters");
+            return false;
+        }
+
+        if (ScoreTextBox != null && ScoreTextBox.Text.Contains(','))
+        {
+            SetStatusLabel.Error("The score textbox cannot have commas!");
+            return false;
+        }
+
+        try
+        {
+            Convert.ToInt32(ScoreTextBox?.Text);
+        }
+        catch (OverflowException)
+        {
+            SetStatusLabel.Error("Score number must be higher than -2,147,483,648 but lower than 2,147,483,647!");
             return false;
         }
 

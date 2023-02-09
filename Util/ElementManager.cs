@@ -14,6 +14,7 @@ public static class ElementManager
     {
         Form?.ReplayUsernameTextbox,
         Form?.ComboTextbox,
+        Form?.ScoreTextBox,
         Form?.ReplayTimestampTextBox,
         Form?._300CountTextBox,
         Form?._100CountTextBox,
@@ -43,13 +44,14 @@ public static class ElementManager
 
         TextBoxToValue.Add(AllTextBoxes[0], replay?.PlayerName);
         TextBoxToValue.Add(AllTextBoxes[1], (replay?.Combo).ToString());
-        TextBoxToValue.Add(AllTextBoxes[2], replay?.ReplayTimestamp.ToLocalTime().ToString(CultureInfo.CurrentCulture));
-        TextBoxToValue.Add(AllTextBoxes[3], replay?.Count300.ToString());
-        TextBoxToValue.Add(AllTextBoxes[4], replay?.Count100.ToString());
-        TextBoxToValue.Add(AllTextBoxes[5], replay?.Count50.ToString());
-        TextBoxToValue.Add(AllTextBoxes[6], replay?.CountMiss.ToString());
-        TextBoxToValue.Add(AllTextBoxes[7], replay?.CountGeki.ToString());
-        TextBoxToValue.Add(AllTextBoxes[8], replay?.CountKatu.ToString());
+        TextBoxToValue.Add(AllTextBoxes[2], replay?.ReplayScore.ToString());
+        TextBoxToValue.Add(AllTextBoxes[3], replay?.ReplayTimestamp.ToLocalTime().ToString(CultureInfo.CurrentCulture));
+        TextBoxToValue.Add(AllTextBoxes[4], replay?.Count300.ToString());
+        TextBoxToValue.Add(AllTextBoxes[5], replay?.Count100.ToString());
+        TextBoxToValue.Add(AllTextBoxes[6], replay?.Count50.ToString());
+        TextBoxToValue.Add(AllTextBoxes[7], replay?.CountMiss.ToString());
+        TextBoxToValue.Add(AllTextBoxes[8], replay?.CountGeki.ToString());
+        TextBoxToValue.Add(AllTextBoxes[9], replay?.CountKatu.ToString());
 
         foreach (var i in TextBoxToValue.Where(i => i.Key != null))
         {
