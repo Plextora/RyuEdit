@@ -62,8 +62,10 @@ public static class ElementManager
 
         if (Form == null) return;
         Form.IsPerfectComboCheckbox.Opacity = 1;
+        Form.DoubleTimeCheckBox.Opacity = 1;
         Form.SaveReplayButton.Opacity = 1;
         Form.IsPerfectComboCheckbox.IsEnabled = true;
+        Form.DoubleTimeCheckBox.IsEnabled = true;
         Form.SaveReplayButton.IsEnabled = true;
         Form.OpenReplayButton.IsEnabled = true;
     }

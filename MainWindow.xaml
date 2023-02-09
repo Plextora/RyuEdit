@@ -596,6 +596,21 @@
                 Content="Score"
                 FontSize="11px"
                 Foreground="PeachPuff" />
+            <CheckBox
+                x:Name="DoubleTimeCheckBox"
+                Grid.Row="1"
+                Margin="10,32,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                x:FieldModifier="public"
+                Background="#202020"
+                Content="Enable DT mod?"
+                Cursor="Hand"
+                Foreground="PeachPuff"
+                IsChecked="False"
+                IsEnabled="False"
+                Opacity="0.6"
+                Style="{StaticResource CheckBox}" />
         </Grid>
         <Button
             x:Name="CloseButton"

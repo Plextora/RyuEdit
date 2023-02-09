@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
 using OsuParsers.Decoders;
+using OsuParsers.Enums;
 using OsuParsers.Replays;
 using RyuEdit.Util;
 
@@ -95,6 +96,8 @@ namespace RyuEdit
             _osuReplay.ReplayScore = Convert.ToInt32(ScoreTextBox.Text);
             if (IsPerfectComboCheckbox.IsChecked != null)
                 _osuReplay.PerfectCombo = (bool)IsPerfectComboCheckbox.IsChecked;
+            if (DoubleTimeCheckBox.IsChecked == true)
+                _osuReplay.Mods += (int)Mods.DoubleTime;
             _osuReplay.Count300 = Convert.ToUInt16(_300CountTextBox.Text);
             _osuReplay.Count100 = Convert.ToUInt16(_100CountTextBox.Text);
             _osuReplay.Count50 = Convert.ToUInt16(_50CountTextBox.Text);
