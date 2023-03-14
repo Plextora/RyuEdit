@@ -1,3 +1,11 @@
+# ⚠️ THIS REPOSITORY/APPLICATION IS NOW OBSOLETE!!! ⚠️
+## Please use [osrUI](https://github.com/Plextora/osrUI) instead of RyuEdit! It has a better UI and support for all difficulty increase/decrease mods!
+
+## What does this mean for RyuEdit?
+I will no longer be supporting this repository. It will publicly archived indefinitely.
+
+##
+
 <h1 align="center">
   Ryu Edit
   
